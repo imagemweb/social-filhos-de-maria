@@ -15,7 +15,6 @@ timeout 10 node prisma/seed.mjs || true
 
 echo "==> Permissões de uploads..."
 mkdir -p public/uploads && chmod -R 777 public/uploads 2>/dev/null || true
-echo "==> Uploads dir: $(ls public/uploads 2>/dev/null | wc -l) arquivo(s)"
 
 echo "==> Iniciando Next.js..."
-exec node server.js
+exec ./node_modules/.bin/next start
