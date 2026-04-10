@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil / Filhos de Maria</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- ---- LEFT SIDEBAR ---- -->
+  <aside class="sidebar-left">
+    <a href="index.html" class="sidebar-logo" aria-label="Início">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.26 5.632 5.905-5.632Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+
+    <nav class="sidebar-nav" aria-label="Navegação principal">
+      <a href="home.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><path d="M21.591 7.146L12.52 1.157c-.316-.21-.724-.21-1.04 0l-9.071 5.99c-.26.173-.409.456-.409.757v13.183c0 .502.418.913.929.913H9.14c.51 0 .929-.41.929-.913v-7.075h3.217v7.075c0 .502.418.913.929.913h6.171c.511 0 .929-.41.929-.913V7.903c0-.301-.158-.584-.408-.757z"/></svg>
+        <span>Início</span>
+      </a>
+      <a href="follow.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><path d="M10 4c-1.105 0-2 .9-2 2s.895 2 2 2 2-.9 2-2-.895-2-2-2zM6 6c0-2.21 1.791-4 4-4s4 1.79 4 4-1.791 4-4 4-4-1.79-4-4zm13 2h-1.5v3H14v1.5h3.5V16H19v-3.5h3.5V11H19V8zm-9 5c-4.418 0-8 1.79-8 4v1h2v-1c0-.942 2.738-2 6-2s6 1.058 6 2v1h2v-1c0-2.21-3.582-4-8-4z"/></svg>
+        <span>Seguir</span>
+      </a>
+      <a href="profile.html" class="nav-item active" aria-current="page">
+        <svg viewBox="0 0 24 24"><path d="M17.863 13.44c1.477 1.58 2.366 3.38 2.632 5.43H3.51c.266-2.05 1.155-3.85 2.632-5.43 1.498-1.6 3.498-2.5 5.858-2.5s4.36.9 5.863 2.5zM12 2C9.791 2 8 3.79 8 6s1.791 4 4 4 4-1.79 4-4-1.791-4-4-4z"/></svg>
+        <span>Perfil</span>
+      </a>
+    </nav>
+
+    <a href="home.html" class="btn-post btn">Publicar</a>
+
+    <div class="sidebar-user">
+      <div class="avatar">
+        <div class="avatar-placeholder">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        </div>
+      </div>
+      <div class="user-info">
+        <p class="display-name">Kernel</p>
+        <p class="username">@alkernel</p>
+      </div>
+      <span class="more-icon">···</span>
+    </div>
+  </aside>
+
+
+  <!-- ---- CENTER: PROFILE ---- -->
+  <main class="feed-center" aria-label="Perfil do usuário">
+
+    <!-- Page header -->
+    <div class="page-header">
+      <a href="home.html" class="back-btn" aria-label="Voltar">
+        <svg viewBox="0 0 24 24"><path d="M7.414 13l5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2H7.414z"/></svg>
+      </a>
+      <div>
+        <p class="page-header-title">Agenet Kernel</p>
+        <p class="page-header-subtitle">0 publicações</p>
+      </div>
+      <!-- Search icon on right -->
+      <button style="margin-left:auto;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-primary);transition:background .2s;" aria-label="Pesquisar no perfil">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:var(--text-primary);"><path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.814 5.262l4.276 4.276-1.414 1.414-4.276-4.276C13.815 17.818 12.986 18.5 11 18.5c0 0-8.5-3.806-8.5-8.5z"/></svg>
+      </button>
+    </div>
+
+    <!-- Banner -->
+    <div class="profile-banner">
+      <!-- Banner vazio (cinza escuro) -->
+      <div class="profile-avatar-wrap">
+        <div class="profile-avatar">
+          <div class="avatar-placeholder">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions bar (Set up profile button) -->
+    <div class="profile-actions-bar">
+      <button class="btn btn-outline">Configurar perfil</button>
+    </div>
+
+    <!-- Profile info -->
+    <div class="profile-info">
+      <h1 class="profile-display-name">Kernel</h1>
+      <p class="profile-username">@alkernel</p>
+
+      <div class="profile-meta">
+        <!-- Calendar icon -->
+        <svg viewBox="0 0 24 24"><path d="M7 11h2v2H7v-2zm0 4h2v2H7v-2zm4-4h2v2h-2v-2zm0 4h2v2h-2v-2zm4-4h2v2h-2v-2zm0 4h2v2h-2v-2zM5 22h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2zm0-16h14v2H5V6zm0 4h14v10H5V10z"/></svg>
+        Participou em fevereiro de 2026
+        <span>›</span>
+      </div>
+
+      <div class="profile-stats">
+        <div class="profile-stat">
+          <strong>1</strong> <span>Seguindo</span>
+        </div>
+        <div class="profile-stat">
+          <strong>0</strong> <span>Seguidores</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile tabs -->
+    <div class="profile-tabs" role="tablist">
+      <button class="profile-tab active" role="tab" aria-selected="true">Publicações</button>
+      <button class="profile-tab" role="tab" aria-selected="false">Respostas</button>
+    </div>
+
+    <!-- Empty state -->
+    <div class="profile-empty">
+      <p style="font-size:var(--font-size-xl);font-weight:800;color:var(--text-primary);margin-bottom:8px;">Sem publicações ainda</p>
+      <p>Quando você publicar, as publicações aparecerão aqui.</p>
+    </div>
+
+  </main><!-- /feed-center -->
+
+
+  <!-- ---- RIGHT SIDEBAR ---- -->
+  <aside class="sidebar-right" aria-label="Painel lateral direito">
+
+    <div class="search-bar">
+      <span class="search-icon">
+        <svg viewBox="0 0 24 24"><path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.814 5.262l4.276 4.276-1.414 1.414-4.276-4.276C13.815 17.818 12.986 18.5 11 18.5c0 0-8.5-3.806-8.5-8.5z"/></svg>
+      </span>
+      <input type="search" placeholder="Pesquisar" aria-label="Pesquisar" />
+    </div>
+
+    <div class="widget">
+      <h2 class="widget-title">O que está acontecendo</h2>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-name">Galaxy S26 Ultra</p>
+          <p class="trend-meta">Nova tela de privacidade</p>
+          <p class="trend-meta">Promovido por Samsung Brasil</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-meta">Política · Em alta</p>
+          <p class="trend-name">Presidente Bolsonaro</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-meta">Moda e beleza · Em alta</p>
+          <p class="trend-name">Tênis New Balance CT300 V3</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-meta">Música · Em alta</p>
+          <p class="trend-name">#엔하이폰은_7명이다</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <a href="#" class="widget-show-more">Ver mais</a>
+    </div>
+
+  </aside>
+
+</div><!-- /app-layout -->
+
+<script>
+  // Profile tab switch
+  document.querySelectorAll('.profile-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.profile-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+    });
+  });
+</script>
+
+</body>
+</html>

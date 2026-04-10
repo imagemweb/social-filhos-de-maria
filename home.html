@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Início / Filhos de Maria</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     POST MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="postModal" role="dialog" aria-modal="true" aria-label="Criar publicação">
+
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close btn" id="closeModal" aria-label="Fechar">✕</button>
+      <span class="modal-drafts">Rascunhos</span>
+    </div>
+
+    <div class="modal-composer">
+      <div class="avatar">
+        <div class="avatar-placeholder">
+          <!-- Avatar icon -->
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        </div>
+      </div>
+
+      <div class="modal-text-area">
+        <textarea id="modalTextarea" placeholder="O que está acontecendo?" rows="5"></textarea>
+      </div>
+    </div>
+
+    <div class="modal-reply-settings">
+      <!-- Globe icon -->
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      Todos podem responder
+    </div>
+
+    <div class="modal-footer">
+      <div class="modal-tools">
+        <!-- Imagem -->
+        <button class="tool-btn" title="Mídia">
+          <svg viewBox="0 0 24 24"><path d="M19.75 2H4.25C3.01 2 2 3.01 2 4.25v15.5C2 20.99 3.01 22 4.25 22h15.5c1.24 0 2.25-1.01 2.25-2.25V4.25C22 3.01 20.99 2 19.75 2zM4.25 3.5h15.5c.414 0 .75.336.75.75v9.676l-3.858-3.858c-.14-.14-.33-.22-.53-.22h-.003c-.2 0-.393.08-.532.224l-4.317 4.384-1.813-1.806c-.14-.14-.33-.22-.53-.22-.193-.03-.395.08-.535.227L3.5 17.642V4.25c0-.414.336-.75.75-.75zm-.75 16.5v-2.035l4.5-4.29 1.82 1.81c.14.14.33.22.528.22.193 0 .394-.08.535-.227l4.32-4.387 4.047 4.047V19.75c0 .414-.336.75-.75.75H4.25c-.414 0-.75-.336-.75-.75zM9 8.648c0 .792-.643 1.434-1.435 1.434S6.13 9.44 6.13 8.648 6.773 7.214 7.565 7.214 9 7.857 9 8.648z"/></svg>
+        </button>
+        <!-- GIF -->
+        <button class="tool-btn" title="GIF">
+          <svg viewBox="0 0 24 24"><path d="M3 5.5C3 4.119 4.119 3 5.5 3h13C19.881 3 21 4.119 21 5.5v13c0 1.381-1.119 2.5-2.5 2.5h-13C4.119 21 3 19.881 3 18.5v-13zM5.5 4.5c-.552 0-1 .448-1 1v13c0 .552.448 1 1 1h13c.552 0 1-.448 1-1v-13c0-.552-.448-1-1-1h-13zM7.5 15V9h5v1.5H9V12h3.5v1.5H9V15H7.5zm7.5 0v-6h1.5v6H15zm-4.5-7.5h1.5v1.5H10.5V7.5z"/></svg>
+        </button>
+        <!-- Poll -->
+        <button class="tool-btn" title="Enquete">
+          <svg viewBox="0 0 24 24"><path d="M2 20h20v2H2v-2zm2-8h3v6H4v-6zm6-5h3v11h-3V7zm6-4h3v15h-3V3z"/></svg>
+        </button>
+        <!-- Emoji -->
+        <button class="tool-btn" title="Emoji">
+          <svg viewBox="0 0 24 24"><path d="M8 9.5C8 8.119 8.672 7 9.5 7S11 8.119 11 9.5 10.328 12 9.5 12 8 10.881 8 9.5zm6.5 2.5c.828 0 1.5-1.119 1.5-2.5S15.328 7 14.5 7 13 8.119 13 9.5s.672 2.5 1.5 2.5zM12 16c-2.224 0-3.021-2.227-3.051-2.316l-1.897.633C7.165 14.646 8.58 18 12 18s4.835-3.354 4.949-3.683l-1.898-.633C14.819 13.869 14.032 16 12 16zm10-4c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10zm-2 0c0-4.418-3.582-8-8-8s-8 3.582-8 8 3.582 8 8 8 8-3.582 8-8z"/></svg>
+        </button>
+        <!-- Schedule -->
+        <button class="tool-btn" title="Agendar">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+        </button>
+        <!-- Location -->
+        <button class="tool-btn" title="Localização">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </button>
+      </div>
+
+      <button class="btn btn-primary" id="modalPostBtn" disabled>Publicar</button>
+    </div>
+  </div>
+
+</div><!-- /modal-overlay -->
+
+
+<!-- ============================================================
+     APP LAYOUT
+     ============================================================ -->
+<div class="app-layout">
+
+  <!-- ---- LEFT SIDEBAR ---- -->
+  <aside class="sidebar-left">
+
+    <!-- Logo -->
+    <a href="index.html" class="sidebar-logo" aria-label="Início">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.26 5.632 5.905-5.632Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+
+    <!-- Nav -->
+    <nav class="sidebar-nav" aria-label="Navegação principal">
+
+      <a href="home.html" class="nav-item active" aria-current="page">
+        <svg viewBox="0 0 24 24"><path d="M21.591 7.146L12.52 1.157c-.316-.21-.724-.21-1.04 0l-9.071 5.99c-.26.173-.409.456-.409.757v13.183c0 .502.418.913.929.913H9.14c.51 0 .929-.41.929-.913v-7.075h3.217v7.075c0 .502.418.913.929.913h6.171c.511 0 .929-.41.929-.913V7.903c0-.301-.158-.584-.408-.757z"/></svg>
+        <span>Início</span>
+      </a>
+
+      <a href="follow.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><path d="M10 4c-1.105 0-2 .9-2 2s.895 2 2 2 2-.9 2-2-.895-2-2-2zM6 6c0-2.21 1.791-4 4-4s4 1.79 4 4-1.791 4-4 4-4-1.79-4-4zm13 2h-1.5v3H14v1.5h3.5V16H19v-3.5h3.5V11H19V8zm-9 5c-4.418 0-8 1.79-8 4v1h2v-1c0-.942 2.738-2 6-2s6 1.058 6 2v1h2v-1c0-2.21-3.582-4-8-4z"/></svg>
+        <span>Seguir</span>
+      </a>
+
+      <a href="profile.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><path d="M17.863 13.44c1.477 1.58 2.366 3.38 2.632 5.43H3.51c.266-2.05 1.155-3.85 2.632-5.43 1.498-1.6 3.498-2.5 5.858-2.5s4.36.9 5.863 2.5zM12 2C9.791 2 8 3.79 8 6s1.791 4 4 4 4-1.79 4-4-1.791-4-4-4z"/></svg>
+        <span>Perfil</span>
+      </a>
+
+    </nav>
+
+    <!-- Post button -->
+    <button class="btn-post btn" id="openModal">Publicar</button>
+
+    <!-- User info (bottom) -->
+    <div class="sidebar-user">
+      <div class="avatar">
+        <div class="avatar-placeholder">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        </div>
+      </div>
+      <div class="user-info">
+        <p class="display-name">Kernel</p>
+        <p class="username">@alkernel</p>
+      </div>
+      <span class="more-icon">···</span>
+    </div>
+
+  </aside><!-- /sidebar-left -->
+
+
+  <!-- ---- CENTER FEED ---- -->
+  <main class="feed-center" aria-label="Feed principal">
+
+    <!-- Tabs -->
+    <div class="feed-tabs" role="tablist">
+      <button class="feed-tab active" role="tab" aria-selected="true">Para você</button>
+      <button class="feed-tab" role="tab" aria-selected="false">Seguindo</button>
+    </div>
+
+    <!-- Inline composer -->
+    <div class="composer">
+      <div class="avatar">
+        <div class="avatar-placeholder">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        </div>
+      </div>
+      <div class="composer-body">
+        <div class="composer-placeholder" id="composerPlaceholder" role="button" tabindex="0" aria-label="Criar publicação">O que está acontecendo?</div>
+        <div class="composer-actions">
+          <div class="composer-tools">
+            <button class="tool-btn" title="Mídia">
+              <svg viewBox="0 0 24 24"><path d="M19.75 2H4.25C3.01 2 2 3.01 2 4.25v15.5C2 20.99 3.01 22 4.25 22h15.5c1.24 0 2.25-1.01 2.25-2.25V4.25C22 3.01 20.99 2 19.75 2zM4.25 3.5h15.5c.414 0 .75.336.75.75v9.676l-3.858-3.858c-.14-.14-.33-.22-.53-.22h-.003c-.2 0-.393.08-.532.224l-4.317 4.384-1.813-1.806c-.14-.14-.33-.22-.53-.22-.193-.03-.395.08-.535.227L3.5 17.642V4.25c0-.414.336-.75.75-.75zm-.75 16.5v-2.035l4.5-4.29 1.82 1.81c.14.14.33.22.528.22.193 0 .394-.08.535-.227l4.32-4.387 4.047 4.047V19.75c0 .414-.336.75-.75.75H4.25c-.414 0-.75-.336-.75-.75zM9 8.648c0 .792-.643 1.434-1.435 1.434S6.13 9.44 6.13 8.648 6.773 7.214 7.565 7.214 9 7.857 9 8.648z"/></svg>
+            </button>
+          </div>
+          <button class="btn btn-primary" disabled>Publicar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---- POST 1 (patrocinado com imagem) ---- -->
+    <article class="post">
+      <div class="avatar" style="width:40px;height:40px;background:#1c3d6e;border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:12px;">S</div>
+      <div class="post-body">
+        <div class="post-header">
+          <span class="display-name">Samsung Brasil</span>
+          <!-- Verificado -->
+          <span class="badge-icon" title="Conta verificada">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#1d9bf0;"><path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91-1.01-1.01-2.52-1.27-3.91-.81-.67-1.31-1.91-2.19-3.34-2.19-1.43 0-2.67.88-3.33 2.19-1.4-.46-2.91-.2-3.92.81-1.01 1.01-1.27 2.52-.8 3.91C2.88 9.33 2 10.57 2 12c0 1.43.88 2.67 2.19 3.34-.46 1.39-.2 2.9.81 3.91 1.01 1.01 2.52 1.27 3.91.81.67 1.31 1.91 2.19 3.34 2.19 1.43 0 2.67-.88 3.33-2.19 1.4.46 2.91.2 3.92-.81 1.01-1.01 1.27-2.52.8-3.91C21.37 14.67 22.25 13.43 22.25 12zm-13.07 4.01L7.1 13.93l1.48-1.48 1.61 1.61 4.07-4.07 1.48 1.48-5.56 5.54z"/></svg>
+          </span>
+          <span class="username">@SamsungBrasil</span>
+          <span class="dot">·</span>
+          <span class="post-label">Anúncio</span>
+          <button class="menu-btn" aria-label="Mais opções">···</button>
+        </div>
+        <p class="post-text">
+          É oficial: o novo Galaxy S26 Ultra chegou! ✨ Não perca a chance de garantir a melhor câmera Galaxy e recursos de IA surpreendentes. Acesse...
+          <span class="read-more">Ver mais</span>
+        </p>
+        <div class="post-media">
+          <!-- Placeholder de imagem/vídeo do post patrocinado -->
+          <div style="background:#111;height:280px;display:flex;align-items:center;justify-content:center;color:#555;font-size:14px;">
+            [ Vídeo do produto ]
+          </div>
+          <span class="media-badge">0:09 &nbsp; Saiba Mais</span>
+        </div>
+        <p class="post-source text-secondary">De samsung.com</p>
+        <div class="post-actions">
+          <button class="action-btn" title="Comentar">
+            <svg viewBox="0 0 24 24"><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"/></svg>
+            15
+          </button>
+          <button class="action-btn retweet" title="Re-publicar">
+            <svg viewBox="0 0 24 24"><path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/></svg>
+            14
+          </button>
+          <button class="action-btn like" title="Curtir">
+            <svg viewBox="0 0 24 24"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.6-3.011 1.404C3.439 7.976 3.028 9.026 3 10.264c-.08 5.209 7.141 11.924 9 13.451 1.86-1.527 9.081-8.242 9-13.451-.028-1.238-.44-2.288-1.292-3.36-.663-.804-1.769-1.334-3.011-1.404zm-.49 16.26c-1.86-1.527-8.07-7.33-8.19-11.78-.02-.734.187-1.402.618-1.943.368-.474.967-.8 1.79-.846.985-.05 2.116.46 2.967 1.618l1.108 1.501 1.108-1.5c.85-1.159 1.981-1.668 2.966-1.619.824.046 1.422.372 1.79.846.432.54.638 1.21.618 1.943-.12 4.45-6.33 10.25-8.19 11.78z"/></svg>
+            512
+          </button>
+          <button class="action-btn views" title="Visualizações">
+            <svg viewBox="0 0 24 24"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg>
+            2.5M
+          </button>
+          <div class="post-actions-right">
+            <button class="action-btn" title="Salvar">
+              <svg viewBox="0 0 24 24"><path d="M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5h-11z"/></svg>
+            </button>
+            <button class="action-btn" title="Compartilhar">
+              <svg viewBox="0 0 24 24"><path d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---- POST 2 (vídeo normal) ---- -->
+    <article class="post">
+      <div class="avatar" style="width:40px;height:40px;border-radius:50%;background:#2d4a7a;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:14px;">E</div>
+      <div class="post-body">
+        <div class="post-header">
+          <span class="display-name">Elon Musk</span>
+          <span class="badge-icon" title="Verificado">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#1d9bf0;"><path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91-1.01-1.01-2.52-1.27-3.91-.81-.67-1.31-1.91-2.19-3.34-2.19-1.43 0-2.67.88-3.33 2.19-1.4-.46-2.91-.2-3.92.81-1.01 1.01-1.27 2.52-.8 3.91C2.88 9.33 2 10.57 2 12c0 1.43.88 2.67 2.19 3.34-.46 1.39-.2 2.9.81 3.91 1.01 1.01 2.52 1.27 3.91.81.67 1.31 1.91 2.19 3.34 2.19 1.43 0 2.67-.88 3.33-2.19 1.4.46 2.91.2 3.92-.81 1.01-1.01 1.27-2.52.8-3.91C21.37 14.67 22.25 13.43 22.25 12zm-13.07 4.01L7.1 13.93l1.48-1.48 1.61 1.61 4.07-4.07 1.48 1.48-5.56 5.54z"/></svg>
+          </span>
+          <span class="badge-icon" title="X Premium" style="background:#e7e9ea;border-radius:3px;padding:1px 3px;">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:#000;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.26 5.632 5.905-5.632Z"/></svg>
+          </span>
+          <span class="username">@elonmusk</span>
+          <span class="dot">·</span>
+          <span class="username">Mar 11</span>
+          <button class="menu-btn" aria-label="Mais opções">···</button>
+        </div>
+        <p class="post-text">Grok Imagine in a pond for 30 secs</p>
+        <div class="post-media">
+          <div style="background:#0d1117;height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#555;font-size:14px;gap:8px;">
+            <!-- Placeholder de vídeo -->
+            <svg viewBox="0 0 24 24" style="width:48px;height:48px;fill:#555;"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
+            [ Vídeo — Grok Pond 0:29 ]
+          </div>
+        </div>
+        <p class="post-source" style="color:var(--accent);cursor:pointer;">Crie o seu com o Grok</p>
+        <p class="post-source">De <strong>Déborah</strong> <span style="fill:#1d9bf0;">✓</span></p>
+        <div class="post-actions">
+          <button class="action-btn" title="Comentar">
+            <svg viewBox="0 0 24 24"><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"/></svg>
+            6.5K
+          </button>
+          <button class="action-btn retweet" title="Re-publicar">
+            <svg viewBox="0 0 24 24"><path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/></svg>
+            88K
+          </button>
+          <button class="action-btn like" title="Curtir">
+            <svg viewBox="0 0 24 24"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.6-3.011 1.404C3.439 7.976 3.028 9.026 3 10.264c-.08 5.209 7.141 11.924 9 13.451 1.86-1.527 9.081-8.242 9-13.451-.028-1.238-.44-2.288-1.292-3.36-.663-.804-1.769-1.334-3.011-1.404zm-.49 16.26c-1.86-1.527-8.07-7.33-8.19-11.78-.02-.734.187-1.402.618-1.943.368-.474.967-.8 1.79-.846.985-.05 2.116.46 2.967 1.618l1.108 1.501 1.108-1.5c.85-1.159 1.981-1.668 2.966-1.619.824.046 1.422.372 1.79.846.432.54.638 1.21.618 1.943-.12 4.45-6.33 10.25-8.19 11.78z"/></svg>
+            480K
+          </button>
+          <button class="action-btn views" title="Visualizações">
+            <svg viewBox="0 0 24 24"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg>
+            45M
+          </button>
+          <div class="post-actions-right">
+            <button class="action-btn" title="Salvar">
+              <svg viewBox="0 0 24 24"><path d="M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5h-11z"/></svg>
+            </button>
+            <button class="action-btn" title="Compartilhar">
+              <svg viewBox="0 0 24 24"><path d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Post 3 (texto simples) -->
+    <article class="post">
+      <div class="avatar">
+        <div class="avatar-placeholder">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        </div>
+      </div>
+      <div class="post-body">
+        <div class="post-header">
+          <span class="display-name">Usuário Exemplo</span>
+          <span class="username">@usuario</span>
+          <span class="dot">·</span>
+          <span class="username">2h</span>
+          <button class="menu-btn" aria-label="Mais opções">···</button>
+        </div>
+        <p class="post-text">Esta é uma publicação de exemplo para mostrar como ficaria o conteúdo de texto puro no feed. A estrutura já está preparada para receber dados dinâmicos.</p>
+        <div class="post-actions">
+          <button class="action-btn" title="Comentar">
+            <svg viewBox="0 0 24 24"><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"/></svg>
+            3
+          </button>
+          <button class="action-btn retweet" title="Re-publicar">
+            <svg viewBox="0 0 24 24"><path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/></svg>
+            1
+          </button>
+          <button class="action-btn like" title="Curtir">
+            <svg viewBox="0 0 24 24"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.6-3.011 1.404C3.439 7.976 3.028 9.026 3 10.264c-.08 5.209 7.141 11.924 9 13.451 1.86-1.527 9.081-8.242 9-13.451-.028-1.238-.44-2.288-1.292-3.36-.663-.804-1.769-1.334-3.011-1.404zm-.49 16.26c-1.86-1.527-8.07-7.33-8.19-11.78-.02-.734.187-1.402.618-1.943.368-.474.967-.8 1.79-.846.985-.05 2.116.46 2.967 1.618l1.108 1.501 1.108-1.5c.85-1.159 1.981-1.668 2.966-1.619.824.046 1.422.372 1.79.846.432.54.638 1.21.618 1.943-.12 4.45-6.33 10.25-8.19 11.78z"/></svg>
+            27
+          </button>
+          <button class="action-btn views" title="Visualizações">
+            <svg viewBox="0 0 24 24"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg>
+            840
+          </button>
+          <div class="post-actions-right">
+            <button class="action-btn" title="Salvar">
+              <svg viewBox="0 0 24 24"><path d="M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5h-11z"/></svg>
+            </button>
+            <button class="action-btn" title="Compartilhar">
+              <svg viewBox="0 0 24 24"><path d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </main><!-- /feed-center -->
+
+
+  <!-- ---- RIGHT SIDEBAR ---- -->
+  <aside class="sidebar-right" aria-label="Painel lateral direito">
+
+    <!-- Search -->
+    <div class="search-bar">
+      <span class="search-icon">
+        <svg viewBox="0 0 24 24"><path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.814 5.262l4.276 4.276-1.414 1.414-4.276-4.276C13.815 17.818 12.986 18.5 11 18.5c0 0-8.5-3.806-8.5-8.5z"/></svg>
+      </span>
+      <input type="search" placeholder="Pesquisar" aria-label="Pesquisar" />
+    </div>
+
+    <!-- What's happening widget -->
+    <div class="widget">
+      <h2 class="widget-title">O que está acontecendo</h2>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-name">Galaxy S26 Ultra</p>
+          <p class="trend-meta">Nova tela de privacidade</p>
+          <p class="trend-meta">Promovido por Samsung Brasil</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-meta">Música · Em alta</p>
+          <p class="trend-name">#엔하이폰은_7명이다</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-meta">Música · Em alta</p>
+          <p class="trend-name">#BTS_SWIM</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-meta">ENHYPEN · Em alta</p>
+          <p class="trend-name">#enhypen_home</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <a href="#" class="widget-show-more">Ver mais</a>
+    </div>
+
+  </aside><!-- /sidebar-right -->
+
+</div><!-- /app-layout -->
+
+
+<script>
+  // Modal open/close
+  const overlay   = document.getElementById('postModal');
+  const openBtn   = document.getElementById('openModal');
+  const closeBtn  = document.getElementById('closeModal');
+  const composer  = document.getElementById('composerPlaceholder');
+  const textarea  = document.getElementById('modalTextarea');
+  const postBtn   = document.getElementById('modalPostBtn');
+
+  function openModal() {
+    overlay.classList.add('open');
+    textarea.focus();
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+  }
+
+  openBtn.addEventListener('click', openModal);
+  composer.addEventListener('click', openModal);
+  composer.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openModal(); });
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // Enable/disable post button based on textarea content
+  textarea.addEventListener('input', () => {
+    postBtn.disabled = textarea.value.trim().length === 0;
+  });
+
+  // Feed tab switch
+  document.querySelectorAll('.feed-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.feed-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+    });
+  });
+</script>
+
+</body>
+</html>

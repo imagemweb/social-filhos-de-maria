@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seguir / Filhos de Maria</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- ---- LEFT SIDEBAR ---- -->
+  <aside class="sidebar-left">
+    <a href="index.html" class="sidebar-logo" aria-label="Início">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.741l7.73-8.835L1.254 2.25H8.08l4.26 5.632 5.905-5.632Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+
+    <nav class="sidebar-nav" aria-label="Navegação principal">
+      <a href="home.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><path d="M21.591 7.146L12.52 1.157c-.316-.21-.724-.21-1.04 0l-9.071 5.99c-.26.173-.409.456-.409.757v13.183c0 .502.418.913.929.913H9.14c.51 0 .929-.41.929-.913v-7.075h3.217v7.075c0 .502.418.913.929.913h6.171c.511 0 .929-.41.929-.913V7.903c0-.301-.158-.584-.408-.757z"/></svg>
+        <span>Início</span>
+      </a>
+      <a href="follow.html" class="nav-item active" aria-current="page">
+        <svg viewBox="0 0 24 24"><path d="M10 4c-1.105 0-2 .9-2 2s.895 2 2 2 2-.9 2-2-.895-2-2-2zM6 6c0-2.21 1.791-4 4-4s4 1.79 4 4-1.791 4-4 4-4-1.79-4-4zm13 2h-1.5v3H14v1.5h3.5V16H19v-3.5h3.5V11H19V8zm-9 5c-4.418 0-8 1.79-8 4v1h2v-1c0-.942 2.738-2 6-2s6 1.058 6 2v1h2v-1c0-2.21-3.582-4-8-4z"/></svg>
+        <span>Seguir</span>
+      </a>
+      <a href="profile.html" class="nav-item">
+        <svg viewBox="0 0 24 24"><path d="M17.863 13.44c1.477 1.58 2.366 3.38 2.632 5.43H3.51c.266-2.05 1.155-3.85 2.632-5.43 1.498-1.6 3.498-2.5 5.858-2.5s4.36.9 5.863 2.5zM12 2C9.791 2 8 3.79 8 6s1.791 4 4 4 4-1.79 4-4-1.791-4-4-4z"/></svg>
+        <span>Perfil</span>
+      </a>
+    </nav>
+
+    <a href="home.html" class="btn-post btn">Publicar</a>
+
+    <div class="sidebar-user">
+      <div class="avatar">
+        <div class="avatar-placeholder">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        </div>
+      </div>
+      <div class="user-info">
+        <p class="display-name">Kernel</p>
+        <p class="username">@alkernel</p>
+      </div>
+      <span class="more-icon">···</span>
+    </div>
+  </aside>
+
+
+  <!-- ---- CENTER: FOLLOW PAGE ---- -->
+  <main class="feed-center" aria-label="Sugestões de pessoas para seguir">
+
+    <!-- Page header -->
+    <div class="page-header">
+      <a href="home.html" class="back-btn" aria-label="Voltar">
+        <svg viewBox="0 0 24 24"><path d="M7.414 13l5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2H7.414z"/></svg>
+      </a>
+      <div>
+        <p class="page-header-title">Seguir</p>
+      </div>
+    </div>
+
+    <!-- Section title -->
+    <p class="follow-section-title">Sugerido para você</p>
+
+    <!-- User suggestions -->
+
+    <div class="user-suggestion">
+      <div class="avatar" style="width:44px;height:44px;border-radius:50%;background:#3d3d3d;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:16px;">B</div>
+      <div class="user-suggestion-info">
+        <div class="user-suggestion-name">
+          Barack Obama
+          <span class="verified-icon" title="Verificado">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#1d9bf0;"><path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91-1.01-1.01-2.52-1.27-3.91-.81-.67-1.31-1.91-2.19-3.34-2.19-1.43 0-2.67.88-3.33 2.19-1.4-.46-2.91-.2-3.92.81-1.01 1.01-1.27 2.52-.8 3.91C2.88 9.33 2 10.57 2 12c0 1.43.88 2.67 2.19 3.34-.46 1.39-.2 2.9.81 3.91 1.01 1.01 2.52 1.27 3.91.81.67 1.31 1.91 2.19 3.34 2.19 1.43 0 2.67-.88 3.33-2.19 1.4.46 2.91.2 3.92-.81 1.01-1.01 1.27-2.52.8-3.91C21.37 14.67 22.25 13.43 22.25 12zm-13.07 4.01L7.1 13.93l1.48-1.48 1.61 1.61 4.07-4.07 1.48 1.48-5.56 5.54z"/></svg>
+          </span>
+          <!-- Gov badge -->
+          <span style="background:#e7e9ea;border-radius:3px;padding:1px 4px;display:inline-flex;align-items:center;">
+            <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#000;"><path d="M3 12l9-9 9 9H3zm2 1h14v7H5v-7zm4 0v5h6v-5H9z"/></svg>
+          </span>
+        </div>
+        <p class="user-suggestion-username">@BarackObama</p>
+        <p class="user-suggestion-bio">Dad, husband, President, citizen.</p>
+      </div>
+      <button class="btn-follow btn">Seguir</button>
+    </div>
+
+    <div class="user-suggestion">
+      <div class="avatar" style="width:44px;height:44px;border-radius:50%;background:#004d40;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:16px;">CR</div>
+      <div class="user-suggestion-info">
+        <div class="user-suggestion-name">
+          Cristiano Ronaldo
+          <span class="verified-icon" title="Verificado">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#1d9bf0;"><path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91-1.01-1.01-2.52-1.27-3.91-.81-.67-1.31-1.91-2.19-3.34-2.19-1.43 0-2.67.88-3.33 2.19-1.4-.46-2.91-.2-3.92.81-1.01 1.01-1.27 2.52-.8 3.91C2.88 9.33 2 10.57 2 12c0 1.43.88 2.67 2.19 3.34-.46 1.39-.2 2.9.81 3.91 1.01 1.01 2.52 1.27 3.91.81.67 1.31 1.91 2.19 3.34 2.19 1.43 0 2.67-.88 3.33-2.19 1.4.46 2.91.2 3.92-.81 1.01-1.01 1.27-2.52.8-3.91C21.37 14.67 22.25 13.43 22.25 12zm-13.07 4.01L7.1 13.93l1.48-1.48 1.61 1.61 4.07-4.07 1.48 1.48-5.56 5.54z"/></svg>
+          </span>
+        </div>
+        <p class="user-suggestion-username">@Cristiano</p>
+        <p class="user-suggestion-bio">Welcome to the official account of Cristiano Ronaldo.</p>
+      </div>
+      <button class="btn-follow btn">Seguir</button>
+    </div>
+
+    <div class="user-suggestion">
+      <div class="avatar" style="width:44px;height:44px;border-radius:50%;background:#1565c0;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:16px;">BG</div>
+      <div class="user-suggestion-info">
+        <div class="user-suggestion-name">
+          Bill Gates
+          <span class="verified-icon" title="Verificado">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#1d9bf0;"><path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91-1.01-1.01-2.52-1.27-3.91-.81-.67-1.31-1.91-2.19-3.34-2.19-1.43 0-2.67.88-3.33 2.19-1.4-.46-2.91-.2-3.92.81-1.01 1.01-1.27 2.52-.8 3.91C2.88 9.33 2 10.57 2 12c0 1.43.88 2.67 2.19 3.34-.46 1.39-.2 2.9.81 3.91 1.01 1.01 2.52 1.27 3.91.81.67 1.31 1.91 2.19 3.34 2.19 1.43 0 2.67-.88 3.33-2.19 1.4.46 2.91.2 3.92-.81 1.01-1.01 1.27-2.52.8-3.91C21.37 14.67 22.25 13.43 22.25 12zm-13.07 4.01L7.1 13.93l1.48-1.48 1.61 1.61 4.07-4.07 1.48 1.48-5.56 5.54z"/></svg>
+          </span>
+        </div>
+        <p class="user-suggestion-username">@BillGates</p>
+        <p class="user-suggestion-bio">Sharing things I'm learning through my foundation work and other interests.</p>
+      </div>
+      <button class="btn-follow btn">Seguir</button>
+    </div>
+
+    <div class="user-suggestion">
+      <div class="avatar" style="width:44px;height:44px;border-radius:50%;background:#4a148c;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:16px;">JR</div>
+      <div class="user-suggestion-info">
+        <div class="user-suggestion-name">
+          Joe Rogan
+          <span class="verified-icon" title="Verificado">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#1d9bf0;"><path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91-1.01-1.01-2.52-1.27-3.91-.81-.67-1.31-1.91-2.19-3.34-2.19-1.43 0-2.67.88-3.33 2.19-1.4-.46-2.91-.2-3.92.81-1.01 1.01-1.27 2.52-.8 3.91C2.88 9.33 2 10.57 2 12c0 1.43.88 2.67 2.19 3.34-.46 1.39-.2 2.9.81 3.91 1.01 1.01 2.52 1.27 3.91.81.67 1.31 1.91 2.19 3.34 2.19 1.43 0 2.67-.88 3.33-2.19 1.4.46 2.91.2 3.92-.81 1.01-1.01 1.27-2.52.8-3.91C21.37 14.67 22.25 13.43 22.25 12zm-13.07 4.01L7.1 13.93l1.48-1.48 1.61 1.61 4.07-4.07 1.48 1.48-5.56 5.54z"/></svg>
+          </span>
+        </div>
+        <p class="user-suggestion-username">@joerogan</p>
+        <p class="user-suggestion-bio">Dragon Believer</p>
+      </div>
+      <button class="btn-follow btn">Seguir</button>
+    </div>
+
+    <div class="user-suggestion">
+      <div class="avatar" style="width:44px;height:44px;border-radius:50%;background:#e65100;display:flex;align-items:center;justify-content:center;">
+        <!-- Bitcoin logo simplified -->
+        <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:#fff;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 14.59V18h-1.5v-1.38c-.89-.12-1.71-.5-2.32-1.12l1.06-1.06c.43.43 1.01.67 1.62.67.9 0 1.62-.57 1.62-1.27 0-.58-.39-1.1-1.22-1.37l-.82-.27C10.56 11.8 9.5 10.98 9.5 9.5c0-1.36 1.01-2.45 2.41-2.66V5.41h1.5v1.38c.74.1 1.43.42 1.95.91l-1.06 1.06c-.36-.33-.84-.51-1.35-.51-.81 0-1.45.5-1.45 1.13 0 .53.38 1.03 1.15 1.29l.83.27C15.35 11.41 16.5 12.3 16.5 13.91c0 1.41-1.04 2.53-2.59 2.68z"/></svg>
+      </div>
+      <div class="user-suggestion-info">
+        <div class="user-suggestion-name">
+          Bitcoin
+          <span class="verified-icon" title="Verificado">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#1d9bf0;"><path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91-1.01-1.01-2.52-1.27-3.91-.81-.67-1.31-1.91-2.19-3.34-2.19-1.43 0-2.67.88-3.33 2.19-1.4-.46-2.91-.2-3.92.81-1.01 1.01-1.27 2.52-.8 3.91C2.88 9.33 2 10.57 2 12c0 1.43.88 2.67 2.19 3.34-.46 1.39-.2 2.9.81 3.91 1.01 1.01 2.52 1.27 3.91.81.67 1.31 1.91 2.19 3.34 2.19 1.43 0 2.67-.88 3.33-2.19 1.4.46 2.91.2 3.92-.81 1.01-1.01 1.27-2.52.8-3.91C21.37 14.67 22.25 13.43 22.25 12zm-13.07 4.01L7.1 13.93l1.48-1.48 1.61 1.61 4.07-4.07 1.48 1.48-5.56 5.54z"/></svg>
+          </span>
+        </div>
+        <p class="user-suggestion-username">@Bitcoin</p>
+        <p class="user-suggestion-bio">Bitcoin is an open source censorship-resistant peer-to-peer immutable network. Trackable digital gold. Don't trust; verify. Not your keys; not your coins.</p>
+      </div>
+      <button class="btn-follow btn">Seguir</button>
+    </div>
+
+    <div class="user-suggestion">
+      <div class="avatar" style="width:44px;height:44px;border-radius:50%;background:#1a1a2e;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:14px;">NDT</div>
+      <div class="user-suggestion-info">
+        <div class="user-suggestion-name">
+          Neil deGrasse Tyson
+          <span class="verified-icon" title="Verificado">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#1d9bf0;"><path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91-1.01-1.01-2.52-1.27-3.91-.81-.67-1.31-1.91-2.19-3.34-2.19-1.43 0-2.67.88-3.33 2.19-1.4-.46-2.91-.2-3.92.81-1.01 1.01-1.27 2.52-.8 3.91C2.88 9.33 2 10.57 2 12c0 1.43.88 2.67 2.19 3.34-.46 1.39-.2 2.9.81 3.91 1.01 1.01 2.52 1.27 3.91.81.67 1.31 1.91 2.19 3.34 2.19 1.43 0 2.67-.88 3.33-2.19 1.4.46 2.91.2 3.92-.81 1.01-1.01 1.27-2.52.8-3.91C21.37 14.67 22.25 13.43 22.25 12zm-13.07 4.01L7.1 13.93l1.48-1.48 1.61 1.61 4.07-4.07 1.48 1.48-5.56 5.54z"/></svg>
+          </span>
+        </div>
+        <p class="user-suggestion-username">@neiltyson</p>
+        <p class="user-suggestion-bio">Astrophysicist <a href="#">braid.ai/neildegrassety...</a></p>
+      </div>
+      <button class="btn-follow btn">Seguir</button>
+    </div>
+
+    <div class="user-suggestion">
+      <div class="avatar" style="width:44px;height:44px;border-radius:50%;background:#bf360c;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:15px;">JB</div>
+      <div class="user-suggestion-info">
+        <div class="user-suggestion-name">
+          Jeff Bezos
+          <span class="verified-icon" title="Verificado">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#1d9bf0;"><path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91-1.01-1.01-2.52-1.27-3.91-.81-.67-1.31-1.91-2.19-3.34-2.19-1.43 0-2.67.88-3.33 2.19-1.4-.46-2.91-.2-3.92.81-1.01 1.01-1.27 2.52-.8 3.91C2.88 9.33 2 10.57 2 12c0 1.43.88 2.67 2.19 3.34-.46 1.39-.2 2.9.81 3.91 1.01 1.01 2.52 1.27 3.91.81.67 1.31 1.91 2.19 3.34 2.19 1.43 0 2.67-.88 3.33-2.19 1.4.46 2.91.2 3.92-.81 1.01-1.01 1.27-2.52.8-3.91C21.37 14.67 22.25 13.43 22.25 12zm-13.07 4.01L7.1 13.93l1.48-1.48 1.61 1.61 4.07-4.07 1.48 1.48-5.56 5.54z"/></svg>
+          </span>
+          <span style="background:#e7e9ea;border-radius:3px;padding:1px 4px;display:inline-flex;align-items:center;">
+            <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:#000;"><path d="M3 12l9-9 9 9H3zm2 1h14v7H5v-7zm4 0v5h6v-5H9z"/></svg>
+          </span>
+        </div>
+        <p class="user-suggestion-username">@JeffBezos</p>
+        <p class="user-suggestion-bio">Amazon. Blue Origin. Washington Post. Bezos Earth Fund. Bezos Academy.</p>
+      </div>
+      <button class="btn-follow btn">Seguir</button>
+    </div>
+
+    <div class="user-suggestion">
+      <div class="avatar" style="width:44px;height:44px;border-radius:50%;background:#cc0000;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:11px;">CNN</div>
+      <div class="user-suggestion-info">
+        <div class="user-suggestion-name">
+          CNN Breaking News
+          <span class="verified-icon" title="Verificado">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#1d9bf0;"><path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91-1.01-1.01-2.52-1.27-3.91-.81-.67-1.31-1.91-2.19-3.34-2.19-1.43 0-2.67.88-3.33 2.19-1.4-.46-2.91-.2-3.92.81-1.01 1.01-1.27 2.52-.8 3.91C2.88 9.33 2 10.57 2 12c0 1.43.88 2.67 2.19 3.34-.46 1.39-.2 2.9.81 3.91 1.01 1.01 2.52 1.27 3.91.81.67 1.31 1.91 2.19 3.34 2.19 1.43 0 2.67-.88 3.33-2.19 1.4.46 2.91.2 3.92-.81 1.01-1.01 1.27-2.52.8-3.91C21.37 14.67 22.25 13.43 22.25 12zm-13.07 4.01L7.1 13.93l1.48-1.48 1.61 1.61 4.07-4.07 1.48 1.48-5.56 5.54z"/></svg>
+          </span>
+        </div>
+        <p class="user-suggestion-username">@cnnbrk</p>
+        <p class="user-suggestion-bio">Breaking news from CNN Digital. Check @cnn for all things CNN, breaking and more.</p>
+      </div>
+      <button class="btn-follow btn">Seguir</button>
+    </div>
+
+  </main><!-- /feed-center -->
+
+
+  <!-- ---- RIGHT SIDEBAR ---- -->
+  <aside class="sidebar-right" aria-label="Painel lateral direito">
+
+    <div class="search-bar">
+      <span class="search-icon">
+        <svg viewBox="0 0 24 24"><path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.814 5.262l4.276 4.276-1.414 1.414-4.276-4.276C13.815 17.818 12.986 18.5 11 18.5c0 0-8.5-3.806-8.5-8.5z"/></svg>
+      </span>
+      <input type="search" placeholder="Pesquisar" aria-label="Pesquisar" />
+    </div>
+
+    <div class="widget">
+      <h2 class="widget-title">O que está acontecendo</h2>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-name">Galaxy S26 Ultra</p>
+          <p class="trend-meta">Nova tela de privacidade</p>
+          <p class="trend-meta">Promovido por Samsung Brasil</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-meta">Política · Em alta</p>
+          <p class="trend-name">Presidente Bolsonaro</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-meta">Música · Em alta</p>
+          <p class="trend-name">#엔하이폰은_7명이다</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <div class="trend-item">
+        <div>
+          <p class="trend-meta">Música · Em alta</p>
+          <p class="trend-name">#BTS_SWIM</p>
+        </div>
+        <button class="trend-more-btn" aria-label="Mais opções">···</button>
+      </div>
+
+      <a href="#" class="widget-show-more">Ver mais</a>
+    </div>
+
+  </aside>
+
+</div><!-- /app-layout -->
+
+<script>
+  // Toggle follow button state
+  document.querySelectorAll('.btn-follow').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.textContent.trim() === 'Seguir') {
+        btn.textContent = 'Seguindo';
+        btn.style.background = 'transparent';
+        btn.style.color = 'var(--text-primary)';
+        btn.style.border = '1px solid var(--border)';
+      } else {
+        btn.textContent = 'Seguir';
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.border = '';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
