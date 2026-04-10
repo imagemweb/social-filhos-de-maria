@@ -1,0 +1,8 @@
+# Forçar LF em todos os arquivos de texto
+* text=auto eol=lf
+
+# Shell scripts SEMPRE LF
+*.sh text eol=lf
+
+# Dockerfile SEMPRE LF
+Dockerfile text eol=lf
