@@ -1,7 +1,5 @@
-FROM node:20-slim
+FROM node:20
 WORKDIR /app
-
-RUN apt-get update && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
 
 COPY package*.json ./
 RUN npm ci
@@ -16,4 +14,4 @@ ENV NODE_ENV=production
 RUN mkdir -p public/uploads
 
 EXPOSE 3000
-CMD ["node", "node_modules/next/dist/bin/next", "start", "--hostname", "0.0.0.0"]
+CMD ["npm", "start"]

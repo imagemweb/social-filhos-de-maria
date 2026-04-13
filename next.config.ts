@@ -12,11 +12,6 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: '**' },
     ],
   },
-  experimental: {
-    serverActions: {
-      bodySizeLimit: '20mb',
-    },
-  },
 }
 
 export default nextConfig
