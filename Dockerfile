@@ -14,4 +14,4 @@ ENV NODE_ENV=production
 RUN mkdir -p public/uploads
 
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["sh", "-c", "npm start 2>&1 | tee /tmp/start.log; echo 'EXIT:' $?; sleep 600"]
