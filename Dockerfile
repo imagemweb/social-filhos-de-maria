@@ -14,4 +14,4 @@ ENV NODE_ENV=production
 RUN mkdir -p public/uploads
 
 EXPOSE 3000
-CMD ["sleep", "infinity"]
+CMD ["npm", "start"]
