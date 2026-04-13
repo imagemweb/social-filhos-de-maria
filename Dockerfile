@@ -13,5 +13,5 @@ ENV NODE_ENV=production
 
 RUN mkdir -p public/uploads
 
-EXPOSE 3000
-CMD ["node", "-e", "const h=require('http');h.createServer((_,r)=>r.end('ALIVE')).listen(3000,'0.0.0.0',()=>console.log('ok'));setInterval(()=>{},60000)"]
+EXPOSE 4000
+CMD ["node", "-e", "const h=require('http');h.createServer((_,r)=>r.end('ALIVE ON 4000')).listen(4000,'0.0.0.0',()=>console.log('ok 4000'));setInterval(()=>{},60000)"]
