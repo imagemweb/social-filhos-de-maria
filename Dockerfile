@@ -13,8 +13,8 @@ ENV NODE_ENV=production
 
 RUN mkdir -p public/uploads
 
-HEALTHCHECK --interval=10s --timeout=5s --start-period=120s --retries=3 \
-  CMD curl -f http://localhost:3000/ || exit 1
+COPY entrypoint-debug.sh /entrypoint-debug.sh
+RUN chmod +x /entrypoint-debug.sh
 
 EXPOSE 3000
-CMD ["./node_modules/.bin/next", "start", "-H", "0.0.0.0"]
+CMD ["/entrypoint-debug.sh"]
