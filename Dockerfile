@@ -14,4 +14,4 @@ ENV NODE_ENV=production
 RUN mkdir -p public/uploads
 
 EXPOSE 3000
-CMD ["node", "debug-server.js"]
+CMD ["node", "-e", "const h=require('http');h.createServer((_,r)=>r.end('ALIVE')).listen(3000,'0.0.0.0',()=>console.log('ok'));setInterval(()=>{},60000)"]
